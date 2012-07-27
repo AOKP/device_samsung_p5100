@@ -70,21 +70,21 @@
         than the size of the config_autoBrightnessLevels array.
     -->
     <integer-array name="config_autoBrightnessLcdBacklightValues">
-        <item>30</item>
-        <item>33</item>
-        <item>36</item>
-        <item>40</item>
-        <item>45</item>
-        <item>50</item>
-        <item>55</item>
         <item>60</item>
         <item>70</item>
-        <item>80</item>
-        <item>90</item>
+        <item>85</item>
         <item>100</item>
-        <item>120</item>
+        <item>105</item>
+        <item>110</item>
+        <item>115</item>
+        <item>125</item>
+        <item>135</item>
+        <item>145</item>
         <item>150</item>
-        <item>180</item>
+        <item>175</item>
+        <item>185</item>
+        <item>190</item>
+        <item>195</item>
         <item>200</item>
         <item>210</item>
         <item>220</item>
@@ -177,14 +177,17 @@
     <!-- Boolean indicating whether the wifi chipset has dual frequency band support -->
     <bool translatable="false" name="config_wifi_dual_band_support">true</bool>
 
+    <!-- Boolean indicating whether the wifi chipset has p2p support -->
+    <bool translatable="false" name="config_wifi_p2p_support">true</bool>
+
     <!-- Boolean indicating whether the wifi chipset has background scan support -->
     <bool translatable="false" name="config_wifi_background_scan_support">true</bool>
 
     <!-- Component name of the service providing network location support. -->
-    <string name="config_networkLocationProvider">com.google.android.location.NetworkLocationProvider</string>
+    <string name="config_networkLocationProviderPackageName">com.google.android.location</string>
 
     <!-- Component name of the service providing geocoder API support. -->
-    <string name="config_geocodeProvider">com.google.android.location.GeocodeProvider</string>
+    <string name="config_geocodeProviderPackageName">com.google.android.location</string>
 
     <!-- Vibrator pattern for feedback about a long screen/key press -->
     <integer-array name="config_longPressVibePattern">
@@ -205,5 +208,7 @@
         <item>50</item>
     </integer-array>
 
+    <!-- Workaround for devices with broken keyboards -->
     <bool name="config_forceDisableHardwareKeyboard">true</bool>
+
 </resources>

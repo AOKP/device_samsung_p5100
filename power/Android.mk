@@ -1,5 +1,4 @@
-#
-# Copyright (C) 2012 The CyanogenMod Project
+# Copyright (C) 2012 The Android Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,16 +11,17 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-#
 
-# Include p51xx BoardConfigCommon
--include device/samsung/p5100/BoardConfigCommon.mk
 
-TARGET_BOARD_INFO_FILE := device/samsung/p5100/board-info.txt
+LOCAL_PATH := $(call my-dir)
 
-# Inline kernel building
-TARGET_KERNEL_SOURCE := kernel/samsung/espresso10
-TARGET_KERNEL_CONFIG := aokp_p5100_defconfig
+# HAL module implemenation stored in
+# hw/<POWERS_HARDWARE_MODULE_ID>.<ro.hardware>.so
+include $(CLEAR_VARS)
 
-# assert
-TARGET_OTA_ASSERT_DEVICE := p5100,GT-P5100,espresso10rf,espresso10rfxx
+LOCAL_MODULE_PATH := $(TARGET_OUT_SHARED_LIBRARIES)/hw
+LOCAL_SHARED_LIBRARIES := liblog libcutils
+LOCAL_SRC_FILES := power_piranha.c
+LOCAL_MODULE := power.piranha
+LOCAL_MODULE_TAGS := optional
+include $(BUILD_SHARED_LIBRARY)
