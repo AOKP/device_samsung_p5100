@@ -7,3 +7,10 @@ telephony.lteOnCdmaDevice=0
 ro.ril.hsxpa=1
 ro.ril.gprsclass=10
 ro.sf.lcd_density=160
+
+# hardware info
+ro.device.cpu=1GHz dual-core TI OMAP 4430
+ro.device.gpu=PowerVR SGX SGX540
+ro.device.rear_cam=3 MP
+ro.device.front_cam=VGA
+ro.device.screen_res=1280x800
