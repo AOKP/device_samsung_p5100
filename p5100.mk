@@ -18,11 +18,18 @@ $(call inherit-product, device/samsung/p5100/p51xx-common.mk)
 
 LOCAL_PATH := device/samsung/p5100
 
+ifeq ($(TARGET_PREBUILT_KERNEL),)
+LOCAL_KERNEL := device/samsung/p5100/kernel
+else
+LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
+endif
+
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
-# Audio
+# Audio and prebuilt kernel
 PRODUCT_COPY_FILES += \
-	$(LOCAL_PATH)/configs/tiny_hw.xml:system/etc/sound/espresso10rf \
+	$(LOCAL_KERNEL):kernel \
+	$(LOCAL_PATH)/configs/tiny_hw.xml:system/etc/sound/espresso10wifi \
 	$(LOCAL_PATH)/configs/audio_policy.conf:system/etc/audio_policy.conf
 
 # Packages
